@@ -9,6 +9,20 @@
 <body>
     <h1>Drawing Animations</h1>
 
+    <svg height= '400' width='400' id='my_svg'>
+        <circle 
+            r='190' 
+            cx='200' 
+            cy='200' 
+            color='orange' 
+            stroke='orange' 
+            stroke-width='10' 
+            stroke-dasharray='560'
+            stroke-dashoffset='560'
+            fill='transparent'
+        />
+    </svg>
+
     <div id='circle'>
         <input id='user_input' value ='30'/>
         <button id='start_button'>START</button>
@@ -16,7 +30,7 @@
     </div>
 
     
-
+    <script src='timerClass.js'></script>
     <script src='script.js'></script>
 </body>
 </html>
