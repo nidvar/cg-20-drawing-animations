@@ -18,16 +18,12 @@ let time = duration_input_from_dom.value
 const z = new my_timer(start_button_from_dom, pause_button_from_dom, duration_input_from_dom, {
     onStart(){
         time = duration_input_from_dom.value
-        console.log(time)
-
-        start = start - (perimeter/time)/100
-
+        start = 0;
         the_circle.setAttribute('stroke-dashoffset', start)
     },
     onTick(){
 
         start = start - (perimeter/time)/100
-
         the_circle.setAttribute('stroke-dashoffset', start)
     },
     onPause(){

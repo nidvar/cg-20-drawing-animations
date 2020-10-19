@@ -31,6 +31,7 @@ class my_timer {
         if(this.user_input.value <= 0){
             console.log('0 seconds')
             this.pause();
+
         }else{
             this.onTick();
             this.set_remaining_time = this.get_remaining_time - 0.01;
