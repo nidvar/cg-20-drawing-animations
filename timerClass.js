@@ -27,7 +27,6 @@ class my_timer {
         }else{
             console.log('timer is already running')
         }
-
         
     }
 
