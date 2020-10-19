@@ -18,16 +18,14 @@ class my_timer {
 
     start=()=>{
         this.onStart()
-
         if(this.timer_running == false){
             this.timer_running = true;
             this.tick();
-            this.ticking_interval = setInterval(this.tick, 1000)
+            this.ticking_interval = setInterval(this.tick, 10)
             console.log(this.ticking_interval)
         }else{
             console.log('timer is already running')
         }
-        
     }
 
     tick=()=>{
@@ -36,8 +34,7 @@ class my_timer {
             this.pause();
         }else{
             this.onTick();
-            this.set_remaining_time = this.get_remaining_time - 1;
-            console.log(`remaining time: ${this.user_input.value}`)
+            this.set_remaining_time = this.get_remaining_time - 0.01;
         }
     }
 
@@ -52,6 +49,6 @@ class my_timer {
     }
 
     set set_remaining_time(new_value){
-        this.user_input.value = new_value
+        this.user_input.value = new_value.toFixed(2)
     }
 }
