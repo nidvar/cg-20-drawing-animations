@@ -8,15 +8,26 @@ class my_timer {
         this.pause_button = pause_button;
         this.user_input = user_input;
 
+        this.timer_running = false;
+
         this.start_button.addEventListener('click', this.start);
         this.pause_button.addEventListener('click', this.pause);
         this.user_input.addEventListener('input', this.set_remaining_time);
     }
     
     start=()=>{
-        this.tick();
-        this.ticking_interval = setInterval(this.tick, 1000)
-        console.log(this.ticking_interval)
+        
+
+        if(this.timer_running == false){
+            this.timer_running = true;
+            this.tick();
+            this.ticking_interval = setInterval(this.tick, 1000)
+            console.log(this.ticking_interval)
+        }else{
+            console.log('timer is already running')
+        }
+
+        
     }
 
     tick=()=>{
@@ -25,6 +36,7 @@ class my_timer {
     }
 
     pause=()=>{
+        this.timer_running = false;
         console.log('pause')
         clearInterval(this.ticking_interval);
     }
