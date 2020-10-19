@@ -31,8 +31,13 @@ class my_timer {
     }
 
     tick=()=>{
-        this.set_remaining_time = this.get_remaining_time - 1;
-        console.log(`remaining time: ${this.user_input.value}`)
+        if(this.user_input.value <= 0){
+            console.log('0 seconds')
+            this.pause();
+        }else{
+            this.set_remaining_time = this.get_remaining_time - 1;
+            console.log(`remaining time: ${this.user_input.value}`)
+        }
     }
 
     pause=()=>{
