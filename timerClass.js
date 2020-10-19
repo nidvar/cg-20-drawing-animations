@@ -22,7 +22,6 @@ class my_timer {
             this.timer_running = true;
             this.tick();
             this.ticking_interval = setInterval(this.tick, 10)
-            console.log(this.ticking_interval)
         }else{
             console.log('timer is already running')
         }

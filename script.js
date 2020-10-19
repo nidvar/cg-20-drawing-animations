@@ -4,7 +4,7 @@ const start_button_from_dom = document.getElementById('start_button');
 
 const the_circle = document.getElementById('my_circle');
 
-//grab 'my_timer' class from timerClass.js
+
 
 let start = 0;
 
@@ -17,11 +17,16 @@ let time = duration_input_from_dom.value
 
 const z = new my_timer(start_button_from_dom, pause_button_from_dom, duration_input_from_dom, {
     onStart(){
-        console.log('starting the border')
+        time = duration_input_from_dom.value
+        console.log(time)
+
+        start = start - (perimeter/time)/100
+
+        the_circle.setAttribute('stroke-dashoffset', start)
     },
     onTick(){
 
-        start = start - 1
+        start = start - (perimeter/time)/100
 
         the_circle.setAttribute('stroke-dashoffset', start)
     },
